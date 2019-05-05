@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Floor Navigation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .con {
+      padding: 50px;
+      padding-left: 100px;
+      width: 100%;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, .1);
+    }
+
+    .con > .floor {
+      margin-bottom: 50px;
+      width: 100%;
+      height: 1200px;
+      line-height: 200px;
+      text-align: center;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .con > .floor:nth-of-type(odd) {
+      background: lightseagreen;
+    }
+
+    .con > .floor:nth-of-type(even) {
+      background: lightcoral;
+    }
+
+    .nav {
+      display: none;
+      position: fixed;
+      left: 25px;
+      top: 25%;
+      box-shadow: 0 0 5px 0 #000;
+    }
+
+    .nav > li {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-user-select: none;
+    }
+
+    .nav > li + li {
+      border-top: 1px solid #000;
+    }
+
+    .nav > li.current {
+      color: #fff;
+      background: lightsalmon;
+    }
+
+    .nav > li:hover {
+      color: #fff;
+      background: lightskyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="con" id="con">
+    <div class="floor">HEADER</div>
+    <div class="floor">FLOOR 1</div>
+    <div class="floor">FLOOR 2</div>
+    <div class="floor">FLOOR 3</div>
+    <div class="floor">FLOOR 4</div>
+    <div class="floor">FLOOR 5</div>
+    <div class="floor">FLOOR 6</div>
+  </div>
+  <ul class="nav" id="nav">
+    <li data-cur="↑" data-init="↑">↑</li>
+    <li data-cur="一楼" data-init="1F">1F</li>
+    <li data-cur="二楼" data-init="2F">2F</li>
+    <li data-cur="三楼" data-init="3F">3F</li>
+    <li data-cur="四楼" data-init="4F">4F</li>
+    <li data-cur="五楼" data-init="5F">5F</li>
+    <li data-cur="六楼" data-init="6F">6F</li>
+  </ul>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
