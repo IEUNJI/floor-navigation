@@ -41,7 +41,7 @@ class Floor {
           this.curNav.innerHTML = this.curNav.dataset.cur;
         }
       });
-    });
+    }, { threshold: [0.3, 0.7] });
     this.conList.forEach(item => this.io2.observe(item));
   }
   init() {
